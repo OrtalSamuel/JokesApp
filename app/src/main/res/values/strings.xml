@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Chucknorris</string>
+    <string name="choose_category">choose category</string>
+</resources>
