@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Chucknorris"
 include(":app")
- 
+include(":myApi")
+include(":Jokes")

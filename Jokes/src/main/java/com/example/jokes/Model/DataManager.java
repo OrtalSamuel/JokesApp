@@ -1,4 +1,4 @@
-package com.example.chucknorris;
+package com.example.jokes.Model;
 
 import java.util.ArrayList;
 
