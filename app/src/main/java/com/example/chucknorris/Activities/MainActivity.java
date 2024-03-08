@@ -11,22 +11,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.jokes.Model.DataManager;
-import com.example.jokes.Model.Joke;
+
 import com.example.chucknorris.R;
+import com.example.jokes.Model.Joke;
+import com.example.jokes.*;
+import com.example.jokes.Retrofit.JokeController;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
-
     private Button btnGetJokeByCategory;
     private Spinner spinnerCategories;
     private TextView tvJoke;
 
-
+    JokeController jokeController = new JokeController();
 
 
     @Override

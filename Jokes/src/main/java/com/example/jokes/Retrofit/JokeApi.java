@@ -1,13 +1,22 @@
 package com.example.jokes.Retrofit;
+import com.example.jokes.Model.Joke;
+
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
+
 
 public interface JokeApi {
- }
+    @GET("/joke/{category}")
+    Call<Joke> getJokeByCategory(@Path("category") String category);
 
-//     @GET("/jokes/{category}")
-//     Call<String> getJokeByCategory(@Path("category") String category);
-//
-//     @POST("/jokes/add")
-//     Call<Joke> addJoke(@Body Joke joke);
-// }
-//
-//
+    @POST("/joke/add")
+    Call<Joke> addJoke(@Query("jokeText") String jokeText, @Query("category") String category);
+
+
+}
+
+
