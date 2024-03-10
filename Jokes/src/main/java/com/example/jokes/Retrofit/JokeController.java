@@ -65,7 +65,7 @@ public class JokeController   {
         };
 
 
-//        public void addJoke(String jokeText, String category, final CallBack_Joke callback) {
+        public void addJoke(String jokeText, String category) {
 //            Call<Joke> addJokeCall = jokeAPI.addJoke(jokeText, category);
 //            addJokeCall.enqueue(new Callback<Joke>() {
 //                @Override
@@ -90,5 +90,5 @@ public class JokeController   {
 //                }
 //            });
 //
-//            }
+            }
     }

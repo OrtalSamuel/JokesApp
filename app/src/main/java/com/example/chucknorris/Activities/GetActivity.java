@@ -10,17 +10,11 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.jokes.Model.DataManager;
-
 import com.example.chucknorris.R;
 import com.example.jokes.Model.Joke;
-import com.example.jokes.*;
 import com.example.jokes.Retrofit.JokeController;
 
-import java.util.ArrayList;
-import java.util.Random;
-
-public class MainActivity extends AppCompatActivity {
+public class GetActivity extends AppCompatActivity {
 
     private Button btnGetJokeByCategory;
     private Spinner spinnerCategories;
@@ -32,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_get);
 
         btnGetJokeByCategory = findViewById(R.id.btnGetJokeByCategory);
         spinnerCategories = findViewById(R.id.spinnerCategories);
