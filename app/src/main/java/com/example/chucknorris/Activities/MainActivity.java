@@ -1,4 +1,4 @@
-package com.example.chucknorris;
+package com.example.chucknorris.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.chucknorris.Activities.AddActivity;
 import com.example.chucknorris.Activities.GetActivity;
+import com.example.chucknorris.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,26 +33,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    btnGetJokeByCategory.setOnClickListener(new View.OnClickListener()
+        btnGetJokeByCategory.setOnClickListener(new View.OnClickListener()
 
-    {
-        @Override
-        public void onClick (View v){
-        // Start the GetActivity
-        startActivity(new Intent(MainActivity.this, GetActivity.class));
-    }
-    });
+        {
+            @Override
+            public void onClick (View v){
+                // Start the GetActivity
+                startActivity(new Intent(MainActivity.this, GetActivity.class));
+            }
+        });
 
-    // Set click listener for the "Add Joke" button
+        // Set click listener for the "Add Joke" button
         btnAddJoke.setOnClickListener(new View.OnClickListener()
 
-    {
-        @Override
-        public void onClick (View v){
-        // Start the AddActivity
-        startActivity(new Intent(MainActivity.this, AddActivity.class));
-    }
-    });
+        {
+            @Override
+            public void onClick (View v){
+                // Start the AddActivity
+                startActivity(new Intent(MainActivity.this, AddActivity.class));
+            }
+        });
 
-}
+    }
 }

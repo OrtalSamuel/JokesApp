@@ -6,13 +6,23 @@
     android:background="@drawable/ic_background">
 
 
-
+    <TextView
+        android:id="@+id/tvSelectAcategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:text="Select a category"
+        android:textColor="@color/black"
+        />
 
 
     <Spinner
         android:id="@+id/spinnerCategories"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_below="@id/tvSelectAcategory"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:background="@drawable/spinner_background"
@@ -20,7 +30,8 @@
         android:paddingEnd="16dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
-        android:spinnerMode="dropdown" />
+        android:spinnerMode="dropdown"
+        android:dropDownSelector="@color/black"/>
 
     <Button
         android:id="@+id/btnGetJokeByCategory"
@@ -28,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/spinnerCategories"
         android:layout_marginTop="200dp"
-        android:text="Get joke by category"
+        android:text="Get joke "
         android:textColor="@color/black"
         android:background="@color/teal"
         android:textAllCaps="false"

@@ -33,25 +33,15 @@
         android:paddingBottom="12dp"
         android:spinnerMode="dropdown" />
 
-    <TextView
-        android:id="@+id/tvInsertAjoke"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinnerCategories"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:textSize="20sp"
-        android:text="Insert a joke"
-        android:textColor="@color/black"
-        />
+
 
     <EditText
         android:id="@+id/joke"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvInsertAjoke"
+        android:layout_below="@id/spinnerCategories"
         android:layout_marginTop="30dp"
-        android:hint="Enter text here"
+        android:hint="Enter joke here"
         android:inputType="text" />
 
 
@@ -77,7 +67,7 @@
         android:id="@+id/tvJoke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnGetJokeByCategory"
+        android:layout_below="@id/btnAddJoke"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:textSize="18sp"

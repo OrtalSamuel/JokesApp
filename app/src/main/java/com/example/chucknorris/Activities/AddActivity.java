@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -16,7 +17,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.chucknorris.MainActivity;
+import com.example.chucknorris.Activities.MainActivity;
 import com.example.chucknorris.R;
 import com.example.jokes.Model.Joke;
 import com.example.jokes.Retrofit.JokeController;
@@ -36,6 +37,16 @@ public class AddActivity extends AppCompatActivity {
         spinnerCategories = findViewById(R.id.spinnerCategories);
         tvJoke = findViewById(R.id.tvJoke);
         joke = findViewById(R.id.joke);
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.joke_array,
+                android.R.layout.simple_spinner_item
+        );
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCategories.setAdapter(adapter);
+
 
 
         btnAddJoke.setOnClickListener(new View.OnClickListener()
