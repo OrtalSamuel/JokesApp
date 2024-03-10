@@ -10,10 +10,10 @@ import retrofit2.http.Query;
 
 
 public interface JokeApi {
-    @GET("/joke/{category}")
-    Call<Joke> getJokeByCategory(@Path("category") String category);
+    @GET("/jokes/{category}")
+    Call<Joke> getJokeByCategory(@Path(value = "category", encoded= true) String category);
 
-    @POST("/joke/add")
+    @POST("/jokes")
     Call<Joke> addJoke(@Query("jokeText") String jokeText, @Query("category") String category);
 
 

@@ -2,7 +2,7 @@
     <string name="app_name">Chucknorris</string>
     <string name="choose_category">choose category</string>
     <string-array name="joke_array">
-        <item>Your Momma</item>
+        <item>Math</item>
         <item>Chuck Norris</item>
     </string-array>
 </resources>

@@ -8,7 +8,7 @@ public class DataManager {
 
         jokes.add(new Joke()
                 .setJoke("Chuck Norris can divide by zero")
-                .setCategory("Math")
+                .setCategory("Chuck Norris")
         );
         jokes.add(new Joke()
                 .setJoke("Why was the math book sad? Because it had too many problems.")
@@ -24,33 +24,33 @@ public class DataManager {
         );
         jokes.add(new Joke()
                 .setJoke("When Chuck Norris enters a room, he doesn't turn the lights on. He turns the dark off")
-                .setCategory("Light")
+                .setCategory("Chuck Norris")
         );
 
         jokes.add(new Joke()
                 .setJoke("Chuck Norris can slam a revolving door")
-                .setCategory("Strength")
+                .setCategory("Chuck Norris")
         );
         jokes.add(new Joke()
                 .setJoke("Chuck Norris counted to infinity. Twice")
-                .setCategory("Counting")
+                .setCategory("Chuck Norris")
         );
         jokes.add(new Joke()
                 .setJoke("Seven eight (ate) nine because seven was scared of six!")
-                .setCategory("Counting")
+                .setCategory("Math")
         );
 
         jokes.add(new Joke()
                 .setJoke("The calendar was sad because its days were numbered!")
-                .setCategory("Counting")
+                .setCategory("Math")
         );
         jokes.add(new Joke()
                 .setJoke("Chuck Norris can hear sign language")
-                .setCategory("Hearing")
+                .setCategory("Chuck Norris")
         );
         jokes.add(new Joke()
                 .setJoke("Chuck Norris can hear sign language")
-                .setCategory("Hearing")
+                .setCategory("Chuck Norris")
         );
 
 

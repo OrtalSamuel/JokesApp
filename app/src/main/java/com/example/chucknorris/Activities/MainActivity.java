@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinnerCategories;
     private TextView tvJoke;
 
-    JokeController jokeController = new JokeController();  // Initialize the JokeController to make API calls
 
 
 
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 // Show a joke from selected category
                 String selectedCategory = (String) spinnerCategories.getSelectedItem();
                 tvJoke.setVisibility(View.VISIBLE);
-                jokeController.getJokeByCategory(selectedCategory, new JokeController.CallBack_Joke() {
+                JokeController.CallBack_Joke callBackJoke = new JokeController.CallBack_Joke() {
 
                     @Override
                     public void success(Joke joke) {
@@ -70,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
                         tvJoke.setText("Error: " + error);
                     }
 
-                });
+                };
+                new JokeController(callBackJoke).getJokeByCategory(selectedCategory);
             }
         });
 
