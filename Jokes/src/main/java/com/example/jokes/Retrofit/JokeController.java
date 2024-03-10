@@ -16,15 +16,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class JokeController  {
-    static final String BASE_URL = "127.0.0.1:8088/";
+    static final String BASE_URL = "http://127.0.0.1:8088/"; // Base URL for the Flask API
 
     public interface CallBack_Joke {
-        void success(Joke joke);
-        void error(String error);
+        void success(Joke joke); // Callback for successful API response
+        void error(String error); // Callback for API error
 
 
     }
+    public JokeController() {
 
+    }
+
+    // Initialize Gson and Retrofit for making API calls
     Gson gson = new GsonBuilder()
             .setLenient()
             .create();

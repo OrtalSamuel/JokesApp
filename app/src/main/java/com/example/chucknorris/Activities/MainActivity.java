@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinnerCategories;
     private TextView tvJoke;
 
-    JokeController jokeController = new JokeController();
+    JokeController jokeController = new JokeController();  // Initialize the JokeController to make API calls
+
 
 
     @Override
@@ -38,15 +39,14 @@ public class MainActivity extends AppCompatActivity {
         spinnerCategories = findViewById(R.id.spinnerCategories);
         tvJoke = findViewById(R.id.tvJoke);
 
-        //
-        ArrayList<Joke> jokes = DataManager.generateDB();
+     //   ArrayList<Joke> jokes = DataManager.generateDB();
 
         // Populate spinner with categories
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.joke_array,
                 android.R.layout.simple_spinner_item
-        );//change later
+        );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategories.setAdapter(adapter);
 
@@ -58,7 +58,19 @@ public class MainActivity extends AppCompatActivity {
                 // Show a joke from selected category
                 String selectedCategory = (String) spinnerCategories.getSelectedItem();
                 tvJoke.setVisibility(View.VISIBLE);
-                tvJoke.setText(getJokeForCategory(selectedCategory));
+                jokeController.getJokeByCategory(selectedCategory, new JokeController.CallBack_Joke() {
+
+                    @Override
+                    public void success(Joke joke) {
+                        tvJoke.setText(joke.getJoke());
+                    }
+
+                    @Override
+                    public void error(String error) {
+                        tvJoke.setText("Error: " + error);
+                    }
+
+                });
             }
         });
 
@@ -76,13 +88,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-    private String getJokeForCategory(String category) {
-        // Create a list to store jokes of the specified category
-
-
-        return "";
-    }
 
 }
 
