@@ -57,8 +57,9 @@
         android:layout_below="@id/btnGetJokeByCategory"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
+        android:text="Response"
         android:textSize="18sp"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
 
 </RelativeLayout>

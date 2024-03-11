@@ -14,7 +14,7 @@ public interface JokeApi {
     Call<Joke> getJokeByCategory(@Path(value = "category", encoded= true) String category);
 
     @POST("/jokes")
-    Call<Joke> addJoke(@Query("jokeText") String jokeText, @Query("category") String category);
+    Call<Joke> addJoke(@Body Joke joke);
 
 
 }

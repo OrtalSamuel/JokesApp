@@ -65,30 +65,41 @@ public class JokeController   {
         };
 
 
-        public void addJoke(String jokeText, String category) {
-//            Call<Joke> addJokeCall = jokeAPI.addJoke(jokeText, category);
-//            addJokeCall.enqueue(new Callback<Joke>() {
-//                @Override
-//                public void onResponse(Call<Joke> call, Response<Joke> response) {
-//                    if (response.isSuccessful()) {
-//                        Joke joke = response.body();
-//                        if (joke != null) {
-//                            callback.success(joke);
-//                        }
-//                    } else {
-//                        callback.error("" + response.errorBody());
-//                        Log.d("pttt", "" + response.errorBody());
-//                    }
-//
-//
-//                }
-//                @Override
-//                public void onFailure(Call<Joke> call, Throwable t) {
-//                    callback.error(t.getMessage());
-//                    t.printStackTrace();
-//
-//                }
-//            });
-//
+        public void addJoke(Joke joke) {
+            Gson gson = new GsonBuilder()
+                    .setLenient()
+                    .create();
+
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .build();
+
+            JokeApi jokeAPI = retrofit.create(JokeApi.class);
+            Log.d("ss",joke.toString());
+            Call<Joke> call = jokeAPI.addJoke(joke);
+            call.enqueue(internalJokeCallBack);
+        }
+    private Callback<Joke> internalJokeCallBack = new Callback<Joke>() {
+        @Override
+        public void onResponse(Call<Joke> call, Response<Joke> response) {
+            if (response.isSuccessful()) {
+                Joke joke = response.body();
+                callBackJoke.success(joke);
+                int x = 0;
+            } else {
+                callBackJoke.error("" + response.errorBody());
+                Log.d("pttt", "" + response.errorBody());
             }
-    }
+        }
+
+        @Override
+        public void onFailure(Call<Joke> call, Throwable t) {
+            callBackJoke.error(t.getMessage());
+            t.printStackTrace();
+        }
+    };
+
+}
+

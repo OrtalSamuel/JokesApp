@@ -2,6 +2,7 @@ package com.example.chucknorris.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -56,7 +57,9 @@ public class AddActivity extends AppCompatActivity {
             public void onClick (View v){
                 // Start the GetActivity
                 String selectedCategory = spinnerCategories.getSelectedItem().toString();
+                Log.d("ss",selectedCategory);
                 String jokeText = joke.getText().toString().trim();
+                joke.setText("");
                 if (selectedCategory.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Please select a category", Toast.LENGTH_SHORT).show();
                     return;
@@ -66,6 +69,7 @@ public class AddActivity extends AppCompatActivity {
                     return;
                 }
                 tvJoke.setVisibility(View.VISIBLE);
+                Joke joke_add=new Joke(selectedCategory,jokeText);
                 JokeController.CallBack_Joke callBackJoke = new JokeController.CallBack_Joke() {
 
                     @Override
@@ -79,7 +83,7 @@ public class AddActivity extends AppCompatActivity {
                     }
 
                 };
-                new JokeController(callBackJoke).addJoke(jokeText,selectedCategory);
+                new JokeController(callBackJoke).addJoke(joke_add);
 
 
             }

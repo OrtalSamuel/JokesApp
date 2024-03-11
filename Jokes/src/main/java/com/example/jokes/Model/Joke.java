@@ -9,7 +9,7 @@ public class Joke {
     public Joke(String id, String joke) {
 
         this.joke = joke;
-        this.category = category;
+        this.category = id;
     }
     public Joke(){
 
